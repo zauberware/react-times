@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import timeHelper from '../../utils/time';
@@ -105,10 +104,10 @@ class ClassicTheme extends React.PureComponent {
   }
 
   render() {
-    const { timeMode, timeConfig = {} } = this.props;
+    const { timeMode, timeConfig = {}, step } = this.props;
     const timeDatas = timeMode === 12
-      ? timeHelper.get12ModeTimes(timeConfig)
-      : timeHelper.get24ModeTimes(timeConfig);
+      ? timeHelper.get12ModeTimes({ ...timeConfig, step })
+      : timeHelper.get24ModeTimes({ ...timeConfig, step });
 
     return (
       <div

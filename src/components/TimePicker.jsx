@@ -38,6 +38,8 @@ const propTypes = {
   phrases: PropTypes.object,
   placeholder: PropTypes.string,
   showTimezone: PropTypes.bool,
+  width: PropTypes.number,
+  step: PropTypes.number,
   theme: PropTypes.string,
   time: PropTypes.string,
   timeMode: PropTypes.oneOfType([
@@ -65,6 +67,8 @@ const propTypes = {
   timeConfig: PropTypes.object,
   disabled: PropTypes.bool,
   focusDropdownOnTime: PropTypes.bool,
+  classNames: PropTypes.string,
+  containerClassNames: PropTypes.string
 };
 
 const defaultProps = {
@@ -80,6 +84,8 @@ const defaultProps = {
   onTimezoneChange: Function.prototype,
   placeholder: '',
   showTimezone: false,
+  width: 150,
+  step: 30,
   theme: 'material',
   time: '',
   timeMode: TIME.mode,
@@ -97,6 +103,8 @@ const defaultProps = {
   },
   disabled: false,
   focusDropdownOnTime: true,
+  classNames: '',
+  containerClassNames: '',
 };
 
 class TimePicker extends React.PureComponent {
@@ -307,6 +315,8 @@ class TimePicker extends React.PureComponent {
       onTimezoneChange,
       timezoneIsEditable,
       focusDropdownOnTime,
+      width,
+      step,
     } = this.props;
 
     if (disabled) return null;
@@ -327,6 +337,8 @@ class TimePicker extends React.PureComponent {
         draggable={draggable}
         limitDrag={limitDrag}
         timezone={timezoneData}
+        width={width}
+        step={step}
         meridiem={this.meridiem}
         timeConfig={timeConfig}
         showTimezone={showTimezone}
@@ -353,18 +365,22 @@ class TimePicker extends React.PureComponent {
       placeholder,
       withoutIcon,
       colorPalette,
-      closeOnOutsideClick
+      closeOnOutsideClick,
+      classNames,
+      containerClassNames,
     } = this.props;
 
     const { focused } = this.state;
     const times = this.formattedTime;
 
     const pickerPreviewClass = cx(
+      classNames,
       'time_picker_preview',
       focused && 'active',
       disabled && 'disabled'
     );
     const containerClass = cx(
+      containerClassNames,
       'time_picker_container',
       colorPalette === 'dark' && 'dark'
     );

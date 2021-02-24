@@ -1,11 +1,8 @@
 {
-  "name": "react-times",
+  "name": "@zauberware/react-times",
   "description": "A react time-picker component, no jquery-rely",
-  "version": "3.1.12",
-  "author": "ecmadao",
-  "bugs": {
-    "url": "https://github.com/ecmadao/react-times/issues"
-  },
+  "version": "0.0.1",
+  "author": "zauberware",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.6.0",
@@ -63,29 +60,25 @@
     "style-loader": "^0.20.1",
     "webpack": "3.10.0"
   },
-  "homepage": "https://github.com/ecmadao/react-times#readme",
   "keywords": [
     "react",
     "reactjs",
     "time picker",
     "time-picker",
-    "timepicker"
+    "timepicker",
+    "zauberware"
   ],
   "license": "MIT",
   "main": "index.js",
   "maintainers": [
     {
-      "email": "wlec@outlook.com",
-      "name": "ecmadao"
-    },
-    {
-      "email": "carlodicelico@gmail.com",
-      "name": "carlodicelico"
+      "email": "christoph@zauberware.com",
+      "name": "Christoph"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ecmadao/react-times.git"
+    "url": "git+https://github.com/zauberware/react-times.git"
   },
   "scripts": {
     "babel": "babel ./src --out-dir ./lib",

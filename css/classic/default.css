@@ -1,7 +1,7 @@
 @import "../base.css";
 
 .classic_theme_container {
-  height: 250px;
+  height: 150px;
   overflow-y: scroll;
 }
 
