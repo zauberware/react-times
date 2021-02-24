@@ -1,6 +1,6 @@
 {
   "name": "@zauberware/react-times",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A react time-picker component, no jquery-rely",
   "author": "zauberware",
   "dependencies": {

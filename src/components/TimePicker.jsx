@@ -398,7 +398,7 @@ class TimePicker extends React.PureComponent {
           >
             <div className={previewContainerClass}>
               {withoutIcon ? '' : (ICONS.time)}
-              {placeholder || times}
+              {times || placeholder}
             </div>
           </Button>
         )}
